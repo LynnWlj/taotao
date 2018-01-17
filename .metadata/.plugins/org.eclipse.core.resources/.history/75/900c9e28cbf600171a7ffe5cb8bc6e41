@@ -1,0 +1,5 @@
+package com.taotao.protal.controller;
+
+public class IndexController {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;mapper&apos; to &apos;com.taotao.mapper&apos;&#x0D;&#x0A;- Original project: &apos;taotao-manager-mapper&apos;&#x0D;&#x0A;- Original element: &apos;taotao-manager-mapper/src/main/java/mapper&apos;&#x0D;&#x0A;- Renamed element: &apos;taotao-manager-mapper/src/main/java/com.taotao.mapper&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;mapper&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;mapper" name="com.taotao.mapper" qualified="false" references="true" stamp="1515430920515" textual="false" version="1.0"/>
+</session>

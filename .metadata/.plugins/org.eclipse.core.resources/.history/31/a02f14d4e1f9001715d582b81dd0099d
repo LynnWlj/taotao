@@ -1,0 +1,55 @@
+package com.taotao.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.taotao.common.pojo.EUDataGridResult;
+import com.taotao.mapper.TbContentMapper;
+import com.taotao.pojo.TbContent;
+import com.taotao.pojo.TbContentExample;
+import com.taotao.pojo.TbContentExample.Criteria;
+import com.taotao.service.ContentService;
+/**
+ * 内容管理
+* 项目名称：taotao-manager-service
+* 类名称：ContentServiceImpl
+* 类描述：
+* @author:Lynn Wang
+* @createdTime:2018年1月15日 下午5:37:37
+* @修改人:Lynn Wang
+* @updateTime:2018年1月15日 下午5:37:37
+* @version:
+ */
+
+@Service
+public class ContentServiceImpl implements ContentService {
+	@Autowired
+	private TbContentMapper tbContentMapper;
+	
+	/*
+	 * 获得内容
+	 */
+	@Override
+	public EUDataGridResult getItemList(int page, int rows, long categoryId) {
+		//TbItem item = itemMapper.selectByPrimaryKey(itemId);
+		//添加查询条件
+		TbContentExample example = new TbContentExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andCategoryIdEqualTo(categoryId);
+		// 分页处理
+		PageHelper.startPage(page, rows);
+		List<TbContent> list = tbContentMapper.selectByExample(example);
+		// 创建一个返回值对象
+		EUDataGridResult euDataGridResult = new EUDataGridResult();
+		euDataGridResult.setRows(list);
+		// 取记录总条数
+		PageInfo<TbContent> pageInfo = new PageInfo<>(list);
+		euDataGridResult.setTotal(pageInfo.getTotal());
+		return euDataGridResult;
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.taotao.controller;
+
+import org.springframework.stereotype.Controller;
+/**
+ * 内容管理
+* 项目名称：taotao-manager-web
+* 类名称：ContentController
+* 类描述：
+* @author:Lynn Wang
+* @createdTime:2018年1月15日 下午5:52:20
+* @修改人:Lynn Wang
+* @updateTime:2018年1月15日 下午5:52:20
+* @version:
+ */
+@Controller
+public class ContentController {
+
+}
